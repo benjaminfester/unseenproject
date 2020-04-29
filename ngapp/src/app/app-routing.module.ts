@@ -8,7 +8,6 @@ import { ContactComponent } from './contact/contact.component';
 import { DietdiaryComponent } from './dietdiary/dietdiary.component';
 import { ProfileComponent } from './profile/profile.component';
 
-
 const routes: Routes = [
   {
     path: '',

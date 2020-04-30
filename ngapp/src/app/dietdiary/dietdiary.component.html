@@ -1,1 +1,63 @@
-<p>dietdiary works!</p>
+<div class="row pt-5">
+    <div class="col-md-4 mb-3" *ngFor="let meal of meals">
+        <div class="card text-center">
+            <div class="card-body">
+                <h5 class="card-title">{{ meal.title }}</h5>
+                <p class="card-text">Content: {{ meal.content }}</p>
+                <p class="card-text">Calories: {{ meal.calories }}</p>
+                <p class="card-text text-muted">{{ meal.date | date:'medium' }}</p> 
+                <button type="button" class="btn btn-danger rounded-0">Update Meal</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-4 mx-auto">
+        <div class="card rounded-0">
+            <div class="card-header rounded-0 text-light bg-danger">
+                <h3 class="font-weight-light">Add a meal</h3>
+            </div>
+            <div class="card-body rounded-0">
+                <form class="form">
+                    <div class="form-group">
+                        <label>Title</label>
+                            <input [(ngModel)]="addMealData.title"
+                            name="title" 
+                            type="text" 
+                            class="form-control rounded-0"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Description</label>
+                            <input [(ngModel)]="addMealData.description"
+                            name="description" 
+                            type="text" 
+                            class="form-control rounded-0"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Calories</label>
+                        <ng-number-picker [(value)]="addMealData.calories"></ng-number-picker>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label>Date and time</label>
+                        
+                        <dl-date-time-picker
+                            startView="day"
+                            maxView="year"
+                            minView="minute"
+                            minuteStep="5"
+                            [(ngModel)]="addMealData.date">
+                        </dl-date-time-picker>
+
+                    </div>
+                    <button (click)="addMeal()" type="button" class="btn btn-danger float-right rounded-0">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -73,7 +73,7 @@ router.post('/login', (req, res) => {
                         }
                         )
                         return res.status(200).json({
-                            message: req.body.email + ' is now logged in.',
+                            message: email + ' is now logged in.',
                             token: token    
                         })
 
@@ -107,7 +107,7 @@ router.post('/dietdiary', (req, res) => {
     }
 })
 
-router.get('/dietdiary', (req, res) => {
+router.get('/diet', (req, res) => {
     //get meals
 })
 

@@ -4,7 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AlertModule } from 'ngx-alerts';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NumberPickerModule } from 'ng-number-picker';
 import { DlDateTimeDateModule, DlDateTimePickerModule } from 'angular-bootstrap-datetimepicker';
 
@@ -18,6 +18,8 @@ import { DietdiaryComponent } from './dietdiary/dietdiary.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthService } from './auth.service';
 import { DietService } from './diet.service';
+import { AuthGuard } from './auth.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 
 @NgModule({
@@ -42,9 +44,14 @@ import { DietService } from './diet.service';
     DlDateTimeDateModule,
     DlDateTimePickerModule
     
-    
+  
   ],
-  providers: [AuthService, DietService],
+  providers: [AuthService, AuthGuard, DietService,
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

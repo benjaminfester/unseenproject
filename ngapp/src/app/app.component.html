@@ -20,11 +20,11 @@
       </li>
     </ul>
     <ul class="navbar-nav">
-      <a class="nav-link" routerLink="/dietdiary" routerLinkActive="active">Diet Diary</a>
-      <a class="nav-link" routerLink="/profile" routerLinkActive="active">Profile</a>
-      <a class="nav-link" routerLink="/login" routerLinkActive="active">Log in</a>
-      <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
-
+      <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/dietdiary" routerLinkActive="active">Diet Diary</a>
+      <a class="nav-link" *ngIf="_authService.loggedIn()" routerLink="/profile" routerLinkActive="active">Profile</a>
+      <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/login" routerLinkActive="active">Log in</a>
+      <a class="nav-link" *ngIf="!_authService.loggedIn()" routerLink="/register" routerLinkActive="active">Register</a>
+      <a class="nav-link" *ngIf="_authService.loggedIn()" (click)="_authService.logoutUser()" style="cursor: pointer;" >Log out</a>
     </ul>
   </div>
 </nav>

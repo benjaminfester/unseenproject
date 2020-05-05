@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { DietdiaryComponent } from './dietdiary/dietdiary.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './auth.guard';
 
 const routes: Routes = [
   {
@@ -36,11 +37,13 @@ const routes: Routes = [
   },
   {
     path: 'dietdiary',
-    component: DietdiaryComponent
+    component: DietdiaryComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   }
 
 ];

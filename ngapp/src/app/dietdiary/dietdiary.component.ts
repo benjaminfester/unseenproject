@@ -12,6 +12,10 @@ export class DietdiaryComponent implements OnInit {
 
   public addMealData = {} as any
 
+  constructor(private alertService: AlertService,
+    private _auth: AuthService,
+    private _dietService: DietService) { }
+
   meals = [
     {
       title: 'Burger',
@@ -69,9 +73,7 @@ export class DietdiaryComponent implements OnInit {
       date: Date.now()
     }
   ]
-  constructor(private alertService: AlertService,
-              private _auth: AuthService,
-              private _dietService: DietService) { }
+  
 
   ngOnInit(): void {
     this._dietService.getMeals()
@@ -80,8 +82,6 @@ export class DietdiaryComponent implements OnInit {
       err => console.log(err)
     )
   }
-
-
 
   addMeal() {
     this._auth.addMeal(this.addMealData).subscribe(
@@ -95,5 +95,4 @@ export class DietdiaryComponent implements OnInit {
       }
     )
   }
-
 }

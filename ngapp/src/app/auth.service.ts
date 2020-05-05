@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AlertService } from 'ngx-alerts';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -48,4 +47,5 @@ export class AuthService {
     return this.http.get<any>(this._mealsUrl)
   }
 
+ 
 }

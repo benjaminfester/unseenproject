@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DietService {
 
-  private _mealsUrl = "http://localhost/api/meals"
+  private _mealsUrl = "http://localhost/api/dietdiary"
 
   constructor(private http: HttpClient) { }
 

@@ -17,6 +17,24 @@ mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true, useCreat
     }
 })
 
+/*
+function verifyToken(req, res, next) {
+    if(!req.headers.authorization) {
+        return res.status(401).send('Unauthorized request')
+    }
+    let token = req.headers.authorization.split(' ')[1]
+    if (token === 'null') {
+        return res.status(401).send('Unauthorized request')
+
+    }
+    let payload = jwt.verify(token, 'secretKey')
+    if(!payload) {
+        return res.status(401).send('Unauthorized request')
+    }
+    req.userId = payload.subject
+    next()
+}
+*/
 router.get('/', (req, res) => {
     res.send('From api ')
 })
@@ -73,7 +91,7 @@ router.post('/login', (req, res) => {
                         }
                         )
                         return res.status(200).json({
-                            message: email + ' is now logged in.',
+                            message: req.body.email + ' is now logged in.',
                             token: token    
                         })
 
@@ -107,8 +125,11 @@ router.post('/dietdiary', (req, res) => {
     }
 })
 
-router.get('/diet', (req, res) => {
-    //get meals
+router.get('/meals', (req, res) => {
+
+    return meals;
+
 })
+
 
 module.exports = router

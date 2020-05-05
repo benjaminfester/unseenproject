@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
-import { HttpErrorResponse } from '@angular/common/http';
+
 import { AlertService } from 'ngx-alerts';
 
 @Component({
@@ -34,5 +34,6 @@ export class LoginComponent implements OnInit {
         console.log(err)
       }
     )
+    debugger;
   }
 }

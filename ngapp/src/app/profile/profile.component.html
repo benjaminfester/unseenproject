@@ -1,68 +1,179 @@
-<div class="row mt-5">
-    
-    
-    <div class="col mt-5">
 
-        <img src="assets/wiz.png" style="height: 200px; width: 200px;" alt="image" class="float-left mr-2">
-        <h1 style="font-weight: 200;">Welcome, benjaminfester</h1>
-        <p style="font-weight: 200;">From your account page you can change you email, your username, or your profile picture!</p>
-        <p style="font-weight: 200;">Click on the button below to see all your added meals:</p>
 
-        <a style="font-weight: 200;" class="btn btn-info btn-lg float-right rounded-0" [routerLink]="['/dietdiary']" role="button">Your meals</a>
-        
-    </div>
-    <div class="col">
-
-        <div class="card rounded-0 p-5">
-            <div class="card-header rounded-0 text-light bg-danger">
-                <legend style="font-weight: 200">Add Meal</legend>                
-            </div>
+<div class="container">
+    <div class="row pt-5">
+        <div class="col">
+            <img src="assets/wiz.png" style="height: 200px; width: 200px;" alt="image" class="float-left mr-2">
+            <h1 style="font-weight: 200;">Welcome, user</h1>
+            <p style="font-weight: 200;">From your account page you can change you email, your username, or your profile picture!</p>
+            <p style="font-weight: 200;">Click on the button below to see all your added meals:</p>
     
-            <form class="form">
-                
+            <a style="font-weight: 200;" class="btn btn-info btn-lg float-right rounded-0" [routerLink]="['/dietdiary']" role="button">Your meals</a> <br><br>
+            <hr>
+
+            <div class="card rounded-0 p-5">
+                <div class="card-header rounded-0 text-light bg-danger">
+                    <legend style="font-weight: 200">Update Info</legend>
+                </div>
+                <form action="" class="form">
                 <div class="form-group">
-                    <label>Title</label>
-                        <input [(ngModel)]="addMealData.title"
+                    <label>Username</label>
+                        <input 
                         name="title" 
                         type="text" 
                         class="form-control rounded-0"
-                        required>
+                        >
                 </div>
-    
+        
                 <div class="form-group">
-                    <label>Description</label>
-                        <input [(ngModel)]="addMealData.description"
-                        name="description" 
+                    <label>Email</label>
+                        <input 
+                        name="title" 
                         type="text" 
                         class="form-control rounded-0"
-                        required>
+                        >
                 </div>
-    
+        
                 <div class="form-group">
-                    <label>Calories</label>
-                    <ng-number-picker [(value)]="addMealData.calories"></ng-number-picker>
-    
+                    <label>Age</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
                 </div>
-    
+        
                 <div class="form-group">
-                    <label>Date and time</label>
-                    
-                    <dl-date-time-picker
-                        startView="day"
-                        maxView="year"
-                        minView="minute"
-                        minuteStep="5"
-                        [(ngModel)]="addMealData.date">
-                    </dl-date-time-picker>
-    
+                    <label>Gender</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
                 </div>
-                <button style="font-weight: 200;" (click)="addMeal()" type="button" class="btn btn-danger float-right rounded-0">Add</button>
+        
+        
+                <div class="form-group">
+                    <label>Height</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
+                </div>
+        
+                <div class="form-group">
+                    <label>Weight</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
+                </div>
+        
+                <div class="form-group">
+                    <label>Education</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
+                </div>
+        
+                <div class="form-group">
+                    <label>Address</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
+                </div>
+        
+                <div class="form-group">
+                    <label>Environment</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
+                </div>
+        
+                <div class="form-group">
+                    <label>Nationality</label>
+                        <input 
+                        name="title" 
+                        type="text" 
+                        class="form-control rounded-0"
+                        >
+                </div>
+
+                <button style="font-weight: 200;" type="button" class="btn btn-danger float-right rounded-0">Update</button>
+
             </form>
-    
-    
+
+              
+            </div>
+      
+
+        </div>
+
+        <div class="col">
+
+            <div class="card rounded-0 p-5">
+                <div class="card-header rounded-0 text-light bg-danger">
+                    <legend style="font-weight: 200">Add Meal</legend>                
+                </div>
+        
+                <form class="form">
+                    
+                    <div class="form-group">
+                        <label>Title</label>
+                            <input [(ngModel)]="addMealData.title"
+                            name="title" 
+                            type="text" 
+                            class="form-control rounded-0"
+                            required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Description</label>
+                            <input [(ngModel)]="addMealData.description"
+                            name="description" 
+                            type="text" 
+                            class="form-control rounded-0"
+                            required>
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Calories</label>
+                        <ng-number-picker [(value)]="addMealData.calories"></ng-number-picker>
+        
+                    </div>
+        
+                    <div class="form-group">
+                        <label>Date and time</label>
+                        
+                        <dl-date-time-picker
+                            startView="day"
+                            maxView="year"
+                            minView="minute"
+                            minuteStep="5"
+                            [(ngModel)]="addMealData.date">
+                        </dl-date-time-picker>
+        
+                    </div>
+                    <button style="font-weight: 200;" (click)="addMeal()" type="button" class="btn btn-danger float-right rounded-0">Add</button>
+                </form>
+        
+        
+            </div>
+
         </div>
         
-
     </div>
+
 </div>
+
+
+
 
